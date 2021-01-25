@@ -4,7 +4,7 @@ import React, { Component }from 'react';
 import { connect } from 'react-redux';
 import { fetchAdventures } from '../Actions/adventuresActions'
 import AdventuresForm from '../Components/AdventuresForm'
-import AdventuresList from './adventuresList';
+import AdventuresList from '../Components/adventuresList';
 
 
 class AdventureContainer extends Component {

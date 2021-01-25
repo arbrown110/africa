@@ -6,7 +6,8 @@ import NavBar from './Components/NavBar'
 
 const App = () => {
   return (
-    <div >
+    
+    <div className="App">
       <NavBar />
       {/* <AdventureContainer /> */}
       <Routes />

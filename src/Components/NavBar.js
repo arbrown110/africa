@@ -13,7 +13,7 @@ const links = {
 
 const NavBar = () => {
     return (
-        <div>
+        <div className="NavBar" >
             <NavLink
                 to="/" exact style={links} activeStyle={{
                     background: 'darkblue'
@@ -38,7 +38,7 @@ const NavBar = () => {
                 About
             </NavLink>
 
-            {/* <NavLink
+            <NavLink
                 to="/contact" exact style={links} activeStyle={{
                     background: 'darkblue'
              }}
@@ -49,7 +49,7 @@ const NavBar = () => {
                     background: 'darkblue'
              }}
             >Links of more Info
-            </NavLink> */}
+            </NavLink>
             
         </div>
     )

@@ -1,11 +1,22 @@
-*{
-  margin:0%;
-  padding: 0%;
-  box-sizing: border-box;
+
+
+.App {
+  background-image: url("wp4188241.jpg");
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
 }
 
-.Banner-image{
+.center { 
+  text-align: center;
   display: block;
-  margin: 0% auto;
-  margin-top: 3rem
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width: 60%;
 }
