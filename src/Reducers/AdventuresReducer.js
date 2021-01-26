@@ -1,28 +1,28 @@
 export default function AdventuresReducer(state = {adventures: [], events: []}, action) {
     switch(action.type){
         case 'FETCH_ADVENTURES':
-            return action.payload
+            return {adventures: action.payload}
         case 'ADD_ADVENTURE':
-            return [...state, action.payload]  
+            return {...state, adventures: [...state, action.payload] } 
 
       case 'ADD_EVENT':
-        let adventure = state.adventure.map(adventure => {
+        let adventures = state.adventures.map(adventure => {
           if (adventure.id === action.payload.id) {
             return action.payload
           } else {
             return adventure
           }
         })
-        return {...state, adventure: adventure}
+        return {...state, adventures: adventures}
       case 'DELETE_EVENT':
-        let adventureTwo = state.adventure.map(adventure => {
+        let adventuresTwo = state.adventures.map(adventure => {
           if (adventure.id === action.payload.id) {
             return action.payload
           } else {
             return adventure
           }
         })
-        return {...state, adventure: adventureTwo}
+        return {...state, adventures: adventuresTwo}
 
       default:
         return state

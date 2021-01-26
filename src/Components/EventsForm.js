@@ -20,7 +20,7 @@ class EventsForm extends Component {
     handleSubmit = e => {
         e.preventDefault()
         //debugger
-        this.props.addEvent(this.state)
+        this.props.addEvent(this.state, this.props.adventure.id)
     }
 
     render() {

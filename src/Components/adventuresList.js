@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
-//import AdventureContainer from './adventureContainer';
+//import AdventureContainer from '../Containers/adventureContainer'
 
 const AdventuresList = ({adventures}) => {
         return (
@@ -25,14 +25,17 @@ const AdventuresList = ({adventures}) => {
     }
 
 
-
-    {/* return (
-        <div>
-            {adventures.map(adventure => <ul><li key={adventure.id}>{adventure.name} <br /> {adventure.image_url} </li></ul>)}
-        </div>
-    );
-} */}
+//     debugger
+//      return (
+//         <div>
+//             {adventures.map(adventure => <ul><li key={adventure.id}>{adventure.name} <br /> {adventure.image_url} </li></ul>)}
+//         </div>
+        
+//     );
+//     debugger
+// } 
 const mapStateToProps = state => {
+//   debugger
     return { adventures: state.adventures}
 }
 
