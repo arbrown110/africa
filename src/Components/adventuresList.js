@@ -4,15 +4,16 @@ import { Link } from 'react-router-dom'
 //import AdventureContainer from '../Containers/adventureContainer'
 
 const AdventuresList = ({adventures}) => {
+    console.log(adventures)
         return (
+           
             <div>
                 <h3>Topics:</h3>
                 {adventures.map(adventures =>
                 <Link to ={`/adventures/${adventures.id}`} key={adventures.id}>
                  <div>
-                    <button><h3>{adventures.naame}</h3></button>
-                    <br>
-                    </br>
+                    <h3>{adventures.name}</h3>
+
                     <img src={adventures.image_url} alt="Topics" width={300} height="100%"/>
                  </div>   
                 </Link>

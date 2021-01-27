@@ -1,16 +1,17 @@
 import React from 'react';
 import { connect } from 'react-redux'
-
+// import EventContainer from '../Containers/eventContainer'
 import { deleteEvent } from '../Actions/eventsActions'
 
 const EventsList = (props) => {
+
 
     const handleDelete = (event) => {
         props.deleteEvent(event.id, event.adventure.id)
     }
     return (
-        
         <div>
+             {/* <EventContainer props={props}/>    */}
             {props.events && props.events.map(event => 
                 <div className="events" key={event.id} id={event.id}>
                      <h3 >{event.title}</h3>
