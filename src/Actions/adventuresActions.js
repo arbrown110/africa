@@ -34,10 +34,11 @@ export const addAdventure = adventureForm => {
 export const deleteAdventure = adventure_id => {
     let data = {
         method: 'DELETE',
-        headers: { 'Content-Type': 'application/json' }
+        headers: { 'Content-Type': 'application/json' , 'Accepts': 'application/json' }
     }
     return dispatch => {
-        fetch(`${"/adventures"}/${adventure_id}`, data)
+        debugger
+        fetch(`/adventures/${adventure_id}`, data)
           .then(response => response.json())
           .then(adventure => dispatch({
             type: 'DELETE_ADVENTURE',

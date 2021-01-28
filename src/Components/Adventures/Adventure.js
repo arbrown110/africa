@@ -5,10 +5,13 @@ import {NavLink } from 'react-router-dom'
 const Adventure = ({ name , image_url, deleteAdventure, id }) => {
     return (
         <div>
+            <br></br>
             <NavLink key={id} to={`/adventures/${id}/events`}>
                 {name}
-                <img src={image_url} alt="Topics" width={300} height="100%"/>
+
+                <img src={image_url} alt="Topics" width={200} height="100%"/>
                 </NavLink>
+                <br></br>
                 <button className="delete-button" color='red' size='mini' onClick={() => deleteAdventure(id)}>Delete</button>
         </div>
     )

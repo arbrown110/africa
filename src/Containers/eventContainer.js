@@ -2,7 +2,7 @@
 
 import React, { Component } from 'react';
 import EventsForm from '../Components/Events/EventsForm';
-import EventsList from '../Components/Events/eventList';
+import EventList from '../Components/Events/eventList';
 import {addEvent, deleteEvent, fetchEvents } from '../Actions/eventsActions';
 import { connect } from 'react-redux';
 import { fetchAdventure } from '../Actions/adventuresActions'
@@ -17,7 +17,7 @@ class EventContainer extends Component {
         const adventureId = this.props.match.params.adventureId
         return (
             <div>
-                <EventsList key={this.props.adventure.id} 
+                <EventList key={this.props.adventureId} 
                 adventure={this.props.adventure} 
                 eventsList={this.props.eventsList} 
                 deleteEvent={this.props.deleteEvent} />
@@ -31,7 +31,7 @@ class EventContainer extends Component {
 const mapStateToProps = state => ({
    
         adventuresList: state.adventuresList.adventuresListData,
-        eventsList: state.eventsList.eventsListData
+        eventList: state.eventList.eventListData
 })
 
 const mapDispatchToProps = dispatch => ({
