@@ -2,9 +2,9 @@
 
 import React, { Component }from 'react';
 import { connect } from 'react-redux';
-import { fetchAdventures } from '../Actions/adventuresActions'
-import AdventuresForm from '../Components/AdventuresForm'
-import AdventuresList from '../Components/adventuresList';
+import {fetchAdventures, deleteAdventure } from '../Actions/adventuresActions'
+import AdventuresForm from '../Components/Adventures/AdventuresForm'
+import AdventuresList from '../Components/Adventures/adventuresList';
 
 
 class AdventureContainer extends Component {
@@ -16,11 +16,22 @@ class AdventureContainer extends Component {
         return (
             <div>
                 
-                <AdventuresList />
-                <AdventuresForm />
+             <AdventuresList adventuresList={this.props.adventuresList} deleteAdventure={this.props.deleteAdventure} />
+             <AdventuresForm />
             </div>
         )
     }
 }
 
-export default connect(null, {fetchAdventures})(AdventureContainer);
+const mapStateToProps = (state) => {
+    return {
+        adventuresList: state.adventuresList.adventuresListData
+    }
+}
+
+const mapDispatchToProps = dispatch => ({
+    fetchAdventures: () => dispatch(fetchAdventures()),
+    deleteAdventure: id => dispatch(deleteAdventure(id))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(AdventureContainer);

@@ -1,10 +1,10 @@
-// import { combineReducers } from 'redux'
-// import { AdventuresReducer } from '../Reducers/adventuresReducer'
-// //import { eventsReducer} from './eventsReducer'
+import { combineReducers } from 'redux'
+import AdventuresReducer from './AdventuresReducer'
+import EventsReducer from './EventsReducer'
 
-// const roots = combineReducers({
-//     adventures: AdventuresReducer
-//     //events: eventsReducer
-// })
+const roots = combineReducers({
+    adventuresList: AdventuresReducer,
+    eventList: EventsReducer
+})
 
-// export default roots
+export default roots;

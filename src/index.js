@@ -6,10 +6,10 @@ import { createStore, applyMiddleware} from 'redux'
 import { Provider } from 'react-redux'
 import thunk from 'redux-thunk'
 import { composeWithDevTools } from 'redux-devtools-extension';
-import  AdventuresReducer from './Reducers/AdventuresReducer'
+import  Roots from './Reducers/roots'
 import { BrowserRouter as Router } from 'react-router-dom'
 
-const store = createStore(AdventuresReducer, composeWithDevTools(applyMiddleware(thunk)))
+const store = createStore(Roots, composeWithDevTools(applyMiddleware(thunk)))
 
 ReactDOM.render(
   <Provider store={store}>

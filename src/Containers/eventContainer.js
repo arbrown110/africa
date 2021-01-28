@@ -1,5 +1,69 @@
 // //form needs to mount here
 
+import React, { Component } from 'react';
+import EventsForm from '../Components/Events/EventsForm';
+import EventsList from '../Components/Events/eventList';
+import {addEvent, deleteEvent, fetchEvents } from '../Actions/eventsActions';
+import { connect } from 'react-redux';
+import { fetchAdventure } from '../Actions/adventuresActions'
+
+class EventContainer extends Component {
+    componentDidMount() {
+        this.props.fetchEvents(this.props.match.params.adventureId)
+        this.props.fetchAdventure(this.props.params.adventureId)
+    }
+
+    render() {
+        const adventureId = this.props.match.params.adventureId
+        return (
+            <div>
+                <EventsList key={this.props.adventure.id} 
+                adventure={this.props.adventure} 
+                eventsList={this.props.eventsList} 
+                deleteEvent={this.props.deleteEvent} />
+
+                <EventsForm addEvent={this.props.addEvent} adventureId={adventureId}/>
+            </div>
+        )
+    }
+}
+
+const mapStateToProps = state => ({
+   
+        adventuresList: state.adventuresList.adventuresListData,
+        eventsList: state.eventsList.eventsListData
+})
+
+const mapDispatchToProps = dispatch => ({
+
+    fetchEvents: adventureId => dispatch(fetchEvents(adventureId)),
+    fetchAdventure: adventureId => dispatch(fetchAdventure(adventureId)),
+    addAdventure: (EventsForm, adventureId) => dispatch(addEvent(EventsForm, adventureId)),
+    deleteEvent: eventId => dispatch(deleteEvent(eventId))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(EventContainer);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // import React, { Component }from 'react';
 // import { connect } from 'react-redux';
 // import { fetchEvents } from '../Actions/eventsActions'
@@ -50,15 +114,15 @@
 // // put it in variable 
 // // then get event from adventure  then pass down in props to eventlist
 
-import React from 'react'
+// import React from 'react'
 
-const eventContainer = (props) => {
-    console.log(props)
-    return (
-        <div>
-           EventsForm
-        </div>
-    )
-}
+// const eventContainer = (props) => {
+//     console.log(props)
+//     return (
+//         <div>
+//            EventsForm
+//         </div>
+//     )
+// }
 
-export default eventContainer
+// export default eventContainer

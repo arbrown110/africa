@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-
-import{ addAdventure } from '../Actions/adventuresActions'
+import{ addAdventure } from '../../Actions/adventuresActions'
 
 class AdventuresForm extends Component {
-
-    state = {
-        name: '',
-        image_url: ''
+    constructor () {
+        super()
+        this.state = {
+            name: '',
+            image_url: ''
+        }
     }
     handleChange = e => {
         const { name, value } = e.target
@@ -19,26 +20,30 @@ class AdventuresForm extends Component {
     handleSubmit = e => {
         e.preventDefault()
         //debugger
-        this.props.addAdventure(this.state)
+        this.props.addAdventure(this.state);
+        this.setState({
+            name: '',
+            image_url: '' 
+        })
     }
 
     render() {
         return (
 
-            <form onSubmit={this.handleSubmit}>
+            <form onSubmit={(e) => this.handleSubmit(e)}>
                 <h3>Create A New Adventure Topic:</h3>
                 <label>Name</label>
                 <input type='text' value={this.state.name} 
-                onChange={this.handleChange} 
+                onChange={(e) => this.handleChange(e)} 
                 name='name'/>
                 <br />
 
                 <label>Image:</label>
                 <input type='text' value={this.state.image_url} 
-                onChange={this.handleChange} 
+                onChange={(e) => this.handleChange(e)} 
                 name='image_url'/>
                 <br />
-                <input type='submit' value='Create Entry' />
+                <button type="submit">Create Topic</button>
             </form>
         )
     }
