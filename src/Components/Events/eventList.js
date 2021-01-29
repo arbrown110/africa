@@ -1,11 +1,14 @@
 import React from 'react';
 //import { connect } from 'react-redux'
 import Event from './Event'
+//import Adventure from '../Adventures/Adventure'
 // import EventContainer from '../Containers/eventContainer'
 //import { deleteEvent } from '../../Actions/eventsActions'
 
-const EventsList = (props) => {
-    const events = props.eventsList.map(event =>
+const EventsList = props => {
+    
+    const events = 
+    props.eventsList && props.eventsList.map(event =>
         <li className="event-breakdown">
             <Event key={event.id} id={event.id}
             title={event.title}
@@ -14,14 +17,15 @@ const EventsList = (props) => {
             deleteEvent={props.deleteEvent}/>
         </li>
         )
-
+    return (
+        
     // const handleDelete = (event) => {
     //     props.deleteEvent(event.id, event.adventure.id)
     // }
-    return (
         <div>
-            <h1>{props.adventure.name}</h1>
-            <img src={props.adventure.image_url} alt="Topics" width={300} height="100%"/>
+            <h1>{props.event.adventure.name}</h1>
+            <br></br>
+            <img src={props.adventure.image_url} alt="Topics" width={200} height="100%"/>
             <br>
             </br>
             {events}

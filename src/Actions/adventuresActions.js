@@ -27,6 +27,7 @@ export const addAdventure = adventureForm => {
         fetch(`${"/adventures"}`, data)
         .then(res => res.json())
         .then(adventure => dispatch({ type: 'ADD_ADVENTURE', payload: adventure}))
+        .catch(err => err)
     }
 }
 
@@ -34,7 +35,7 @@ export const addAdventure = adventureForm => {
 export const deleteAdventure = adventure_id => {
     let data = {
         method: 'DELETE',
-        headers: { 'Content-Type': 'application/json' , 'Accepts': 'application/json' }
+        headers: { 'Content-Type': 'application/json' , 'Accept': 'application/json' }
     }
     return dispatch => {
         debugger
@@ -44,5 +45,6 @@ export const deleteAdventure = adventure_id => {
             type: 'DELETE_ADVENTURE',
             payload: adventure
           }))
+          .catch(err => err)
       }
     }
