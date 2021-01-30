@@ -23,11 +23,11 @@ const EventsList = props => {
     //     props.deleteEvent(event.id, event.adventure.id)
     // }
         <div>
-            <h1>{props.event.adventure.name}</h1>
+            {/* <h1>{props.event.adventure.name}</h1>
             <br></br>
             <img src={props.adventure.image_url} alt="Topics" width={200} height="100%"/>
             <br>
-            </br>
+            </br> */}
             {events}
         </div>
         // <div>
