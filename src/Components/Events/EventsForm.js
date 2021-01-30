@@ -21,8 +21,8 @@ class EventsForm extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        //debugger
-        this.props.addEvent(this.state, this.props.adventureId);
+        debugger
+        this.props.addEvent(this.state, this.props.adventureId)
        this.setState({
             title: '',
             description: '',
@@ -53,7 +53,7 @@ class EventsForm extends Component {
                 name='krio'/>
                 <br />
 
-                <button size='mini' type='submit'>Create</button> 
+                <button  type='submit'>Create</button> 
             </form>
         )
     }
