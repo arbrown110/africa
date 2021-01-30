@@ -10,7 +10,7 @@ import { fetchAdventure } from '../Actions/adventuresActions'
 class EventContainer extends Component {
     componentDidMount() {
         this.props.fetchEvents(this.props.match.params.adventureId)
-        this.props.fetchAdventure(this.props.params.adventureId)
+        this.props.fetchAdventure(this.props.match.params.adventureId)
     }
 
     render() {
