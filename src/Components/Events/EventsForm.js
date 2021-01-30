@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-// import { connect } from 'react-redux'
 
-// import{ addEvent } from '../../Actions/eventsActions'
+import { connect } from 'react-redux'
+
+import{ addEvent } from '../../Actions/eventsActions'
 
 class EventsForm extends Component {
     constructor() {
@@ -21,7 +22,7 @@ class EventsForm extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        debugger
+        //debugger
         this.props.addEvent(this.state, this.props.adventureId)
        this.setState({
             title: '',
@@ -59,4 +60,4 @@ class EventsForm extends Component {
     }
 }
 //export default connect(null, { addEvent })(EventsForm);
-export default EventsForm;
+export default connect(null, {addEvent})(EventsForm);
