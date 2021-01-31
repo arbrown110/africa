@@ -25,14 +25,14 @@ export const addEvent = (eventsForm, adventureId) => {
 };
 
   // deleting events
-export const deleteEvent = id => {
+export const deleteEvent =( id , adventure_id)=> {
   let data = {
     method: 'DELETE',
     headers: {'Accept': 'application/json','Content-Type': 'application/json'
     }
   } 
     return dispatch => {
-      fetch(`/events/${id}`, data)
+      fetch(`${"/adventures"}/${adventure_id}/${"events"}/${id}`, data)
       .then(res => res.json())
       .then(event =>
         dispatch({type: 'DELETE_EVENT', payload: event})

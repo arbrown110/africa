@@ -20,3 +20,6 @@
   margin: auto;
   width: 60%;
 }
+.event-break-down{
+  display: flex;
+}

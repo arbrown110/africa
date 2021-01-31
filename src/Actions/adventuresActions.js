@@ -36,12 +36,14 @@ export const deleteAdventure = adventure_id => {
         method: 'DELETE',
         headers: { 'Content-Type': 'application/json' }
     }
+    
     return dispatch => {
-        fetch(`${"/adventures"}/${adventure_id}`, data)
+        fetch('/adventures/'+adventure_id, data)
           .then(response => response.json())
           .then(adventure => dispatch({
             type: 'DELETE_ADVENTURE',
             payload: adventure
-          }))
+          })
+        )
       }
     }

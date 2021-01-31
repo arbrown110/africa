@@ -1,23 +1,29 @@
 import React from 'react';
-//import { connect } from 'react-redux'
+import { connect } from 'react-redux'
 import Event from './Event'
 // import EventContainer from '../Containers/eventContainer'
 //import { deleteEvent } from '../../Actions/eventsActions'
+import {deleteEvent} from '../../Actions/eventsActions';
 
 const EventsList = (props) => {
-    const events = props.eventsList.map(event =>
-        <li className="event-breakdown">
-            <Event key={event.id} id={event.id}
-            title={event.title}
-            description={event.description}
-            krio={event.krio}
-            deleteEvent={props.deleteEvent}/>
-        </li>
-        )
 
+        const  events = props.eventsList && props.eventsList.map(event =>
+            
+            <span className="event-break-down">
+               {event.title}
+                <Event key={event.id} id={event.id}
+                title={event.title}
+                description={event.description}
+                krio={event.krio}
+                adventure_id={props.adventure.id}
+                deleteEvent={props.deleteEvent}/>
+            </span>
+        )
+    
     // const handleDelete = (event) => {
     //     props.deleteEvent(event.id, event.adventure.id)
     // }
+    debugger
     return (
         <div>
             <h1>{props.adventure.name}</h1>
@@ -43,5 +49,15 @@ const EventsList = (props) => {
 }
 
 //export default connect(null, {deleteEvent})(EventsList)
+const mapStateToProps = state => {
+    return { eventsList: state.eventList.eventListData }
+}
 
-export default EventsList;
+const mapDispatchToProps = dispatch => ({
+    deleteEvent: (eventId,adventure_id) => dispatch(deleteEvent(eventId, adventure_id))
+  
+});
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(EventsList);
+

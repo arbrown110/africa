@@ -1,24 +1,26 @@
 // //form needs to mount here
 
 import React, { Component } from 'react';
+import {fetchAdventure} from '../Actions/adventuresActions'
+
 import EventsForm from '../Components/Events/EventsForm';
 import EventsList from '../Components/Events/eventList';
-import {addEvent, deleteEvent, fetchEvents } from '../Actions/eventsActions';
+import {addEvent,  fetchEvents } from '../Actions/eventsActions';
 import { connect } from 'react-redux';
-import { fetchAdventure } from '../Actions/adventuresActions'
+//import { fetchAdventure } from '../Actions/adventuresActions'
 
 class EventContainer extends Component {
-    componentDidMount() {
+    componentDidMount(){
+        this.props.fetchAdventure(this.props.match.params.adventureId)
+        
         this.props.fetchEvents(this.props.match.params.adventureId)
-        this.props.fetchAdventure(this.props.params.adventureId)
     }
-
     render() {
         const adventureId = this.props.match.params.adventureId
         return (
             <div>
-                <EventsList key={this.props.adventure.id} 
-                adventure={this.props.adventure} 
+                <EventsList key={adventureId} 
+                adventure={this.props.adventureData} 
                 eventsList={this.props.eventsList} 
                 deleteEvent={this.props.deleteEvent} />
 
@@ -28,18 +30,18 @@ class EventContainer extends Component {
     }
 }
 
-const mapStateToProps = state => ({
-   
-        adventuresList: state.adventuresList.adventuresListData,
-        eventsList: state.eventsList.eventsListData
-})
+const mapStateToProps = state => {
+        
+    return{
+        eventsList: state.eventList.eventListData,
+        adventureData: state.adventuresList.adventureData
+    }
+}
 
 const mapDispatchToProps = dispatch => ({
-
+    fetchAdventure: id => dispatch(fetchAdventure(id)),
     fetchEvents: adventureId => dispatch(fetchEvents(adventureId)),
-    fetchAdventure: adventureId => dispatch(fetchAdventure(adventureId)),
-    addAdventure: (EventsForm, adventureId) => dispatch(addEvent(EventsForm, adventureId)),
-    deleteEvent: eventId => dispatch(deleteEvent(eventId))
+    addEvent: (EventsForm, adventureId) => dispatch(addEvent(EventsForm, adventureId)),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(EventContainer);

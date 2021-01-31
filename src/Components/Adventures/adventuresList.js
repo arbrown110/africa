@@ -12,10 +12,10 @@ const AdventuresList = props => {
         // <Adventure key={adventure.id}  deleteAdventure={props.deleteAdventure}/>
         // )
     // console.log(adventures)
-
+debugger
             return (
                 props.adventuresList && props.adventuresList.map(adventure =>
-                    <Adventure key={adventure.id}  image_url={adventure.image_url} deleteAdventure={props.deleteAdventure}/>)
+                    <Adventure key={adventure.id}  id= {adventure.id} image_url={adventure.image_url} deleteAdventure={props.deleteAdventure}/>)
                 // {adventures}
             )
     }
@@ -54,9 +54,11 @@ const mapStateToProps = state => {
     return { adventuresList: state.adventuresList.adventuresListData }
 }
 
+const mapDispatchToProps = dispatch => ({
+  deleteAdventure: (id) => dispatch(deleteAdventure(id))
+});
 
 
-
-export default connect(mapStateToProps, {deleteAdventure})(AdventuresList);
+export default connect(mapStateToProps, mapDispatchToProps)(AdventuresList);
 
 // export default AdventuresList;
