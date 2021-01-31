@@ -17,8 +17,8 @@ const Routes = () => {
         <Route exact path="/" render={Home} />
         <Route exact path="/About" component={About} />
         <Route exact path='/adventures/new' component={AdventuresForm} />
-        <Route exact path='/adventures' component={AdventureContainer} />
         <Route exact path='/adventures/:adventureId/events' component={EventContainer} /> 
+        <Route exact path='/adventures' component={AdventureContainer} />
         <Route exact path="/Contact" component={Contact} />
         <Route exact path="/Links" component={Links} />
         <Route component={PageNotFound} />

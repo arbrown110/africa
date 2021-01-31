@@ -15,7 +15,11 @@ const AdventuresList = props => {
 debugger
             return (
                 props.adventuresList && props.adventuresList.map(adventure =>
+<<<<<<< HEAD
                     <Adventure key={adventure.id}  id= {adventure.id} image_url={adventure.image_url} deleteAdventure={props.deleteAdventure}/>)
+=======
+                    <Adventure key={adventure.id}  image_url={adventure.image_url} adventure={adventure} {...adventure} deleteAdventure={props.deleteAdventure}/>)
+>>>>>>> 233b4a82abe60817060ee7254d9b687b3f887b3f
                 // {adventures}
             )
     }

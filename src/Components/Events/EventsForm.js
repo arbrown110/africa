@@ -1,6 +1,12 @@
 import React, { Component } from 'react'
+<<<<<<< HEAD
 import { connect } from 'react-redux'
 
+=======
+
+import { connect } from 'react-redux'
+
+>>>>>>> 233b4a82abe60817060ee7254d9b687b3f887b3f
 import{ addEvent } from '../../Actions/eventsActions'
 
 class EventsForm extends Component {
@@ -21,7 +27,12 @@ class EventsForm extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
+<<<<<<< HEAD
         this.props.addEvent(this.state, this.props.adventureId);
+=======
+        //debugger
+        this.props.addEvent(this.state, this.props.adventureId)
+>>>>>>> 233b4a82abe60817060ee7254d9b687b3f887b3f
        this.setState({
             title: '',
             description: '',
@@ -52,12 +63,17 @@ class EventsForm extends Component {
                 name='krio'/>
                 <br />
 
-                <button size='mini' type='submit'>Create</button> 
+                <button  type='submit'>Create</button> 
             </form>
         )
     }
 }
+<<<<<<< HEAD
 const mapDispatchToProps = dispatch => ({
     addEvent: (data, id) => dispatch(addEvent(data, id)),
 })
 export default connect(null, mapDispatchToProps)(EventsForm);
+=======
+//export default connect(null, { addEvent })(EventsForm);
+export default connect(null, {addEvent})(EventsForm);
+>>>>>>> 233b4a82abe60817060ee7254d9b687b3f887b3f

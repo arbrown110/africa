@@ -5,13 +5,14 @@ export const fetchEvents = adventureId => {
         .then(resp => resp.json())
         .then(events =>{ let res = {events, adventureId} 
           dispatch({type: 'FETCH_EVENTS', payload: res})})
+          .catch(err => err)
     }
 }
 
 export const addEvent = (eventsForm, adventureId) => {
     let data = {
       method: 'POST',
-      headers: {'Content-Type': 'application/json'},
+      headers: {'Accept': 'application/json', 'Content-Type': 'application/json'},
       body: JSON.stringify(eventsForm)
     }
     return dispatch => {
@@ -20,6 +21,7 @@ export const addEvent = (eventsForm, adventureId) => {
       .then(event => {
         let res = {event, adventureId}
         dispatch({type: 'ADD_EVENT', payload: res})
+        .catch(err => err)
       })
     };
 };
@@ -37,5 +39,6 @@ export const deleteEvent =( id , adventure_id)=> {
       .then(event =>
         dispatch({type: 'DELETE_EVENT', payload: event})
       )
+      .catch(err => err)
     };
 };

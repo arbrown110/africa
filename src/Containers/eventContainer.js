@@ -4,8 +4,13 @@ import React, { Component } from 'react';
 import {fetchAdventure} from '../Actions/adventuresActions'
 
 import EventsForm from '../Components/Events/EventsForm';
+<<<<<<< HEAD
 import EventsList from '../Components/Events/eventList';
 import {addEvent,  fetchEvents } from '../Actions/eventsActions';
+=======
+import EventList from '../Components/Events/eventList';
+import {addEvent, deleteEvent, fetchEvents } from '../Actions/eventsActions';
+>>>>>>> 233b4a82abe60817060ee7254d9b687b3f887b3f
 import { connect } from 'react-redux';
 //import { fetchAdventure } from '../Actions/adventuresActions'
 
@@ -14,13 +19,22 @@ class EventContainer extends Component {
         this.props.fetchAdventure(this.props.match.params.adventureId)
         
         this.props.fetchEvents(this.props.match.params.adventureId)
+<<<<<<< HEAD
+=======
+        this.props.fetchAdventure(this.props.match.params.adventureId)
+>>>>>>> 233b4a82abe60817060ee7254d9b687b3f887b3f
     }
     render() {
         const adventureId = this.props.match.params.adventureId
         return (
             <div>
+<<<<<<< HEAD
                 <EventsList key={adventureId} 
                 adventure={this.props.adventureData} 
+=======
+                <EventList key={this.props.adventureId} 
+                adventure={this.props.adventure} 
+>>>>>>> 233b4a82abe60817060ee7254d9b687b3f887b3f
                 eventsList={this.props.eventsList} 
                 deleteEvent={this.props.deleteEvent} />
 
@@ -30,6 +44,7 @@ class EventContainer extends Component {
     }
 }
 
+<<<<<<< HEAD
 const mapStateToProps = state => {
         
     return{
@@ -37,6 +52,13 @@ const mapStateToProps = state => {
         adventureData: state.adventuresList.adventureData
     }
 }
+=======
+const mapStateToProps = state => ({
+   
+        adventuresList: state.adventuresList.adventuresListData,
+        eventList: state.eventList.eventListData
+})
+>>>>>>> 233b4a82abe60817060ee7254d9b687b3f887b3f
 
 const mapDispatchToProps = dispatch => ({
     fetchAdventure: id => dispatch(fetchAdventure(id)),
