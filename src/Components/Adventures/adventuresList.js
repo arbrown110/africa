@@ -9,7 +9,7 @@ const AdventuresList = props => {
             return (
                 props.adventuresList && props.adventuresList.map(adventure =>
 
-                <Adventure key={adventure.id}  id= {adventure.id} image_url={adventure.image_url} deleteAdventure={props.deleteAdventure}/>)
+                <Adventure key={adventure.id}  id= {adventure.id} name={adventure.name} image_url={adventure.image_url} deleteAdventure={props.deleteAdventure}/>)
             )
     }
 

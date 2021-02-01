@@ -20,7 +20,7 @@ class EventContainer extends Component {
     }
     render() {
         const adventureId = this.props.match.params.adventureId
-        debugger
+        // debugger
         return (
             <div>
 

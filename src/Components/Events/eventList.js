@@ -23,7 +23,10 @@ const EventsList = (props) => {
 
         <div>
             <br></br>
-            <img src={props.adventure.image_url} alt="Topics" width={100} height="100%"/>
+            {props.adventure.name}
+            <br></br>
+            <img src={props.adventure.image_url} alt="Topics" width={300} height="100%"/>
+            <br></br>
             <br>
             </br>
             {events}

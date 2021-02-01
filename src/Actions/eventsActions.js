@@ -21,7 +21,7 @@ export const addEvent = (eventsForm, adventureId) => {
       .then(event => {
         let res = {event, adventureId}
         dispatch({type: 'ADD_EVENT', payload: res})
-        .catch(err => err)
+        // .catch(err => err)
       })
     };
 };
@@ -39,6 +39,6 @@ export const deleteEvent =( id , adventure_id)=> {
       .then(event =>
         dispatch({type: 'DELETE_EVENT', payload: event})
       )
-      .catch(err => err)
+      // .catch(err => err)
     };
 };
