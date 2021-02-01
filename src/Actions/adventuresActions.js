@@ -39,22 +39,16 @@ export const deleteAdventure = adventure_id => {
     }
     
     return dispatch => {
-<<<<<<< HEAD
+
         fetch('/adventures/'+adventure_id, data)
-=======
-        debugger
-        fetch(`/adventures/${adventure_id}`, data)
->>>>>>> 233b4a82abe60817060ee7254d9b687b3f887b3f
+
           .then(response => response.json())
           .then(adventure => dispatch({
             type: 'DELETE_ADVENTURE',
             payload: adventure
-<<<<<<< HEAD
+
           })
         )
-=======
-          }))
-          .catch(err => err)
->>>>>>> 233b4a82abe60817060ee7254d9b687b3f887b3f
+
       }
     }
