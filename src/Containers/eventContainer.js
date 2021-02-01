@@ -9,7 +9,6 @@ import EventsList from '../Components/Events/eventList';
 import {addEvent,  fetchEvents } from '../Actions/eventsActions';
 
 import { connect } from 'react-redux';
-//import { fetchAdventure } from '../Actions/adventuresActions'
 
 class EventContainer extends Component {
     componentDidMount(){

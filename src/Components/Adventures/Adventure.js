@@ -1,6 +1,5 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom'
-//import { deleteAdventure } from '../../Actions/adventuresActions';
 
 const Adventure = (props) => {
 	const url = "/adventures/"+props.id+"/events"

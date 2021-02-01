@@ -15,8 +15,10 @@ class AdventureContainer extends Component {
     render() {
         return (
             <div>
-                
+                <br></br>
+               <br></br> 
              <AdventuresList adventuresList={this.props.adventuresList} deleteAdventure={this.props.deleteAdventure} />
+             
              <AdventuresForm />
             </div>
         )
