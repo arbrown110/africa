@@ -4,6 +4,9 @@ welcome to the Exodus web application. This is a React based web application tha
 
 ## Demostration
 
+[![zoom](https://media.giphy.com/media/LwQ73vvQZ7XG0pFNoV/giphy.gif)]()
+
+
 
 ## Future updates
 
