@@ -48,4 +48,9 @@ class AdventuresForm extends Component {
         )
     }
 }
-export default connect(null, { addAdventure })(AdventuresForm);
+// export default connect(null, { addAdventure })(AdventuresForm);
+
+const mapDispatchToProps = dispatch => ({
+    addAdventure: (data) => dispatch(addAdventure(data)),
+})
+export default connect(null, mapDispatchToProps)(AdventuresForm);
