@@ -10,10 +10,15 @@ const Adventure = (props) => {
         <div>
             <NavLink to={url}>
                 {props.name}
-                <img src={props.image_url} alt="Topics" width={300} height="100%"/>
                 </NavLink>
+                <br>
+                </br>
+                <button className="like-button" onClick={() => setLike(!like)}>  {like ? "<3" : ""}</button> 
+                <br></br>
+                <img src={props.image_url} alt="Topics" width={300} height="100%"/>
+                <br></br>
                 <button className="delete-button" color='red' size='mini' onClick={() => props.deleteAdventure(props.id)}>Delete</button>
-                <button className="like-button" onClick={() => setLike(!like)}> {like ? "<3" : ""}</button>
+                
         </div>
     )
 }
